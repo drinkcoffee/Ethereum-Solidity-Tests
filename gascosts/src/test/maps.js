@@ -1,5 +1,5 @@
 /**
- * Work out whether using a string as a map key makes gas usage data dependent.
+ * Demonstrate that in Solidity using a string as a map key makes gas usage data dependent.
  */
 const Maps = artifacts.require("./Maps.sol");
 
@@ -174,7 +174,7 @@ contract('Mappings: Gas Usage with String key', function(accounts) {
     it("getStringUint256: three words, existing location", async function() {
         let maps = await Maps.deployed();
         let transactionResult = await maps.getStringUint256NotView(threeWords96Bytes);
-        console.log("Gas Used (getStringUint256): " + transactionResult.receipt.gasUsed);
+        console.log("Gas Used (getStringUint256): " + transactionResult.receipt.gasUsed);git
     });
 
     it("getUint256Uint256: existing location", async function() {
