@@ -174,7 +174,7 @@ contract('Mappings: Gas Usage with String key', function(accounts) {
     it("getStringUint256: three words, existing location", async function() {
         let maps = await Maps.deployed();
         let transactionResult = await maps.getStringUint256NotView(threeWords96Bytes);
-        console.log("Gas Used (getStringUint256): " + transactionResult.receipt.gasUsed);git
+        console.log("Gas Used (getStringUint256): " + transactionResult.receipt.gasUsed);
     });
 
     it("getUint256Uint256: existing location", async function() {
