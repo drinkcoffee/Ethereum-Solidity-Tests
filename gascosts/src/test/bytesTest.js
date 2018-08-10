@@ -2,43 +2,47 @@
  * Check memory usage / gas costs are as expected for bytes type byte arrays of various lengths.
  *
  * The Truffle output was:
- * Gas Used: 27624
- * Gas Used: 27624
- * Gas Used: 27624
- * setBytes: 0 (105ms)
- * Gas Used: 42755
- * Gas Used: 32812
- * Gas Used: 32812
- *  setBytes: 1 (98ms)
- * Gas Used: 44675
- * Gas Used: 34732
- * Gas Used: 34732
- *  setBytes: 30 (118ms)
- * Gas Used: 44739
- * Gas Used: 34796
- * Gas Used: 34796
- *  setBytes: 31 (102ms)
- * Gas Used: 64970
- * Gas Used: 34970
- * Gas Used: 34970
- *  setBytes: 32 (102ms)
- * Gas Used: 85174
- * Gas Used: 40174
- * Gas Used: 40174
- *  setBytes: 33 (104ms)
- * Gas Used: 87222
- * Gas Used: 42222
- * Gas Used: 42222
- *  setBytes: 64 (104ms)
- * Gas Used: 107426
- * Gas Used: 47426
- * Gas Used: 47426
- *  setBytes: 65 (105ms)
- * Gas Used: 42755
- * Gas Used: 32812
- * Gas Used: 32812
- * Gas Used: 32812
- *  setBytes: 1,2,3,4 (122ms)
+ Contract: Bytes: Gas Usage with Bytes type
+ Gas Used: 27624                 21000 base transaction code + ?
+ Gas Used: 27624
+ Gas Used: 27624
+ ✓ setBytes: 0 (108ms)
+ Gas Used: 42755                 21000 base transaction code + 20000 sstore when word blank.
+ Gas Used: 32812                 21000 base transaction code + 2 * 50000 sstore for update (maybe).
+                                 Maybe one for the length and one for the values?
+                                 The storage (one store or two, should match what is done for first pass.
+  Gas Used: 32812
+ ✓ setBytes: 1 (108ms)
+ Gas Used: 44675
+ Gas Used: 34732
+ Gas Used: 34732
+ ✓ setBytes: 30 (138ms)
+ Gas Used: 44739
+ Gas Used: 34796
+ Gas Used: 34796
+ ✓ setBytes: 31 (114ms)
+ Gas Used: 64970                 21000 base transaction code + 2 * 20000 sstore when word blank.
+ Gas Used: 34970
+ Gas Used: 34970
+ ✓ setBytes: 32 (102ms)
+ Gas Used: 85174                 21000 base transaction code + 3 * 20000 sstore when word blank.
+ Gas Used: 40174
+ Gas Used: 40174
+ ✓ setBytes: 33 (111ms)
+ Gas Used: 87222
+ Gas Used: 42222
+ Gas Used: 42222
+ ✓ setBytes: 64 (102ms)
+ Gas Used: 107426
+ Gas Used: 47426
+ Gas Used: 47426
+ ✓ setBytes: 65 (145ms)
+ Gas Used: 42755               Demonstrating saving new values uses the same gas.
+ Gas Used: 32812
+ Gas Used: 32812
+ Gas Used: 32812
+ ✓ setBytes: 1,2,3,4 (127ms)
+
  *
  */
 const Bytes = artifacts.require("./Bytes.sol");
