@@ -8,7 +8,7 @@
  Gas Used: 27624
  ✓ setBytes: 0 (108ms)
  Gas Used: 42755                 21000 base transaction code + 20000 sstore when word blank.
- Gas Used: 32812                 21000 base transaction code + 2 * 50000 sstore for update (maybe).
+ Gas Used: 32812                 21000 base transaction code + 2 * 5000 sstore for update (maybe).
                                  Maybe one for the length and one for the values?
                                  The storage (one store or two, should match what is done for first pass.
   Gas Used: 32812
@@ -33,7 +33,7 @@
  Gas Used: 42222
  Gas Used: 42222
  ✓ setBytes: 64 (102ms)
- Gas Used: 107426
+ Gas Used: 107426                21000 base transaction code + 4 * 20000 sstore when word blank.
  Gas Used: 47426
  Gas Used: 47426
  ✓ setBytes: 65 (145ms)
